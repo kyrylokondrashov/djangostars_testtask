@@ -3,9 +3,9 @@
 My test task
 
 There are three users:
--m1
--u1
--kirill
+m1
+u1
+kirill
 
 Only kirill can enter tha admin site.
 
