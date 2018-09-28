@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block InfoBlock %}
+{% load checkGroup %}
+    <h2 style="text-align:center"> Author Page</h2>
+    <div style="width: 30%; position: relative; left: 35%;">
+    <ul class="list-group">
+            <li class="list-group-item">Name: {{ author.name }}</li>
+            <li class="list-group-item">Surname: {{ author.surname}}</li>
+    </ul>
+    </div>
+    {% if request.user|has_group:"Manager" or request.user.is_superuser %}
+    {% url 'bookstore-editAuthor' author.id as the_url %}
+    <button style="position: relative; left:40%; width: 5%; margin-top: 10px"  class="btn btn-primary" onClick='location.href="{{the_url}}"'>Edit</button>
+    {% endif %}
+    {% url 'bookstore-main' as the_url %}
+    <button style="position: relative; left:47%; width: 5%; margin-top: 10px"  class="btn btn-primary" onClick='location.href="{{the_url}}"'>Back</button>
+{% endblock %}

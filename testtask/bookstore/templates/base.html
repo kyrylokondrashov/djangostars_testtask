@@ -1,0 +1,73 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>{{title}}</title>
+        {% load staticfiles %}
+        {% load checkGroup %}
+        <link rel="stylesheet" rel="stylesheet"  href="{% static 'bookstore/bootstrap/css/bootstrap.min.css' %}">
+        <script src="{% static 'bookstore/bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'bookstore/javascript/jquery-3.3.1.min.js' %}"></script>
+        <link rel="stylesheet" rel="stylesheet"  href="{% static 'bookstore//css/fotter.css' %}">
+    </head>
+    <body>
+            {% if user.is_anonymous %}
+            {% url 'login' as the_url %}
+            <nav class="navbar navbar-light bg-light">
+            <a  href="{{the_url}}">Press to login</a>
+            </nav>
+            {% elif request.user|has_group:"Customer" %}
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link disabled" href="#">Hello Customer</a>
+                            </li>
+                            <li class="nav-item">
+                                    {% url 'bookstore-main' as the_url %}
+                                    <a class="nav-link" href="{{the_url}}"> Home</a>
+                            </li>
+                            <li class="nav-item">
+                                    {% url 'logout' as the_url %}
+                                <a class="nav-link" href="{{the_url}}">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+            </nav>
+            {% elif request.user|has_group:"Manager" or request.user.is_superuser %}
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link disabled" href="#">Hello</a>
+                            </li>
+                            <li class="nav-item">
+                                {% url 'bookstore-main' as the_url %}
+                                <a class="nav-link" href="{{the_url}}"> Home</a>
+                            </li>
+                            <li class="nav-item">
+                                {% url 'bookstore-addBook' as the_url %}
+                                <a class="nav-link" href="{{the_url}}">Add book</a>
+                            </li>
+                            <li class="nav-item">
+                                    {% url 'bookstore-addAuthor' as the_url %}
+                                    <a class="nav-link" href="{{the_url}}">Add author</a>
+                                </li>
+                            <li class="nav-item">
+                                 {% url 'logout' as the_url %}
+                                 <a class="nav-link" href="{{the_url}}">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+            </nav>
+        {% endif %}
+
+        {% block bookList %}{% endblock %}
+        {% block RequestList %}{% endblock %}
+        {% block InfoBlock %}{% endblock %}
+        {% block CreateBlock %}{% endblock %}
+        {% block UpdateBlock %}{% endblock %}
+    <footer class="footer">
+        <p>	TestTask &#169; 2018—2018</p>
+    </footer>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block UpdateBlock %}
+        <h2 style="text-align:center">Update the book</h2>
+        <div style="position: relative; width:20%; left: 40%">
+        <form method="post" id="editForm" >
+            {% csrf_token %}
+            <div class="form-group">
+                    {{ form.title.errors }}
+                    <label for="id_title">Title:</label>
+                    {{ form.title }}
+            </div>
+            <div class="form-group">
+                   {{ form.author.errors }}
+                    <label for="id_author">Author:</label>
+                    {{ form.author }}
+            </div>
+            <div class="form-group">
+                     {{ form.price.errors }}
+                    <label for="id_price">Price:</label>
+                    {{ form.price }}
+            </div>
+            <div class="form-group">
+                    {{ form.ISBN.errors }}
+                    <label for="id_ISBN">ISBN:</label>
+                    {{ form.ISBN }}
+            </div>
+            <div class="form-group">
+                   {{ form.publish_date.errors }}
+                    <label for="id_publich_date">Publish Date:</label>
+                    {{ form.publish_date }}
+            </div>
+            <input type="submit" style="margin-left: 40%" class="btn btn-primary" form="editForm" value="Update">
+        </form>
+        </div>
+        <script>
+            $("div > label").css("margin-left","40%");
+        </script>
+{% endblock %}

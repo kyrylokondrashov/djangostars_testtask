@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block UpdateBlock %}
+        <h2 style="text-align:center">Add a new author</h2>
+        <div style="position: relative; width:20%; left: 40%"">
+        <form method="post" id="createForm" >
+            {% csrf_token %}
+            <div class="form-group">
+                    {{ form.name.errors }}
+                    <label for="id_title">Name:</label>
+                    {{ form.name }}
+            </div>
+            <div class="form-group">
+                        {{ form.surname.errors }}
+                    <label for="id_author">Surname:</label>
+                    {{ form.surname }}
+            </div>
+            <button type="submit" style="margin-left: 40%" class="btn btn-primary" form="createForm">Update</button>
+        </form>
+        </div>
+        <script>
+            $("div > label").css("margin-left","40%");
+        </script>
+{% endblock %}

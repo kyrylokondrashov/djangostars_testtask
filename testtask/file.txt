@@ -1,0 +1,43 @@
+Book was updated at 2018-09-27 23:21:38.903969. 
+ Fields was: id — 22, title — Harry Potter and the Goblet of Fire1, author — I.Asimov, ISBN — 0-7475-4624-X, price — 2123.00, publish date — 2018-09-27
+Fields become: id — 22, title — Harry Potter and the Goblet of Fire, author — I.Asimov, ISBN — 0-7475-4624-X, price — 2123.00, publish date — 2018-09-27
+Book was updated at 2018-09-27 23:21:52.729782. 
+ Fields was: id — 16, title — Harry Potter and the Goblet of Fire, author — J.Rowling, ISBN — 0-7475-4624-X, price — 105.23, publish date — 2018-09-25
+Fields become: id — 16, title — Harry Potter and the Goblet of Fire11, author — J.Rowling, ISBN — 0-7475-4624-X, price — 105.23, publish date — 2018-09-25
+Book was updated at 2018-09-27 23:26:01.415753. 
+ Fields was: id — 16, title — Harry Potter and the Goblet of Fire11, author — J.Rowling, ISBN — 0-7475-4624-X, price — 105.23, publish date — 2018-09-25
+Fields become: id — 16, title — Harry Potter and the Goblet of Fire, author — J.Rowling, ISBN — 0-7475-4624-X, price — 105.23, publish date — 2018-09-25
+ New book was created. Fields: id — 33, title — Harry, author — J.Rowling, ISBN — 0-7475-4624-X, price — 23, publish date — 2018-09-27 at 2018-09-27 23:26:18.588090
+ Book was deleted. Fields: id — 33, title — Harry, author — J.Rowling, ISBN — 0-7475-4624-X, price — 23.00, publish date — 2018-09-27 at 2018-09-27 23:26:40.799504
+Book was updated at 2018-09-27 23:27:09.657860. 
+ Fields was: id — 15, title — Second Foundation, author — S.King, ISBN — 978-0553293364, price — 442.14, publish date — 2018-09-25
+Fields become: id — 15, title — Second Foundation, author — I.Asimov, ISBN — 978-0553293364, price — 442.14, publish date — 2018-09-25
+Book was updated at 2018-09-28 08:08:54.239495. 
+ Fields was: id — 3, title — Memories of Ice, author — S.Erikson, ISBN — 0-553-81312-9, price — 150.00, publish date — 2018-09-25
+Fields become: id — 3, title — Memories of Ice, author — S.Erikson, ISBN — 0-553-81312-9, price — 150.00, publish date — 2018-09-25
+Book was updated at 2018-09-28 08:13:13.106226. 
+ Fields was: id — 22, title — Harry Potter and the Goblet of Fire, author — I.Asimov, ISBN — 0-7475-4624-X, price — 2123.00, publish date — 2018-09-27
+Fields become: id — 22, title — Harry Potter and the Goblet of Fire, author — I.Asimov, ISBN — 0-7475-4624-X, price — 2123.00, publish date — 2018-09-27
+ New book was created. Fields: id — 34, title — Harry Potter and the Goblet of Fire, author — J.Rowling, ISBN — ШЫТВ, price — 1234, publish date — 2018-09-28 at 2018-09-28 08:17:20.960138
+Book was updated at 2018-09-28 11:08:32.959483. 
+ Fields was: id — 34, title — Harry Potter and the Goblet of Fire, author — J.Rowling, ISBN — ШЫТВ, price — 1234.00, publish date — 2018-09-28
+Fields become: id — 34, title — Harry Potter and the Goblet of Fire, author — J.Rowling, ISBN — ШЫТВ, price — 1234.00, publish date — 2018-09-28
+Book was updated at 2018-09-28 11:32:10.285747. 
+ Fields was: id — 1, title — Gardens of the Moon, author — J.Abercrombi, ISBN — 0-553-81217-3, price — 100.00, publish date — 2018-09-05
+Fields become: id — 1, title — Gardens of the Moon, author — J.Rowling, ISBN — 0-553-81217-3, price — 100.00, publish date — 2018-09-05
+Book was updated at 2018-09-28 11:33:08.917433. 
+ Fields was: id — 15, title — Second Foundation, author — I.Asimov, ISBN — 978-0553293364, price — 442.14, publish date — 2018-09-25
+Fields become: id — 15, title — Second Foundation, author — J.Abercrombi, ISBN — 978-0553293364, price — 442.14, publish date — 2018-09-25
+Book was updated at 2018-09-28 11:37:45.511001. 
+ Fields was: id — 22, title — Harry Potter and the Goblet of Fire, author — I.Asimov, ISBN — 0-7475-4624-X, price — 2123.00, publish date — 2018-09-27
+Fields become: id — 22, title — Harry Potter and the Goblet of Fire, author — J.Rowling, ISBN — 0-7475-4624-X, price — 2123.00, publish date — 2018-09-27
+Book was updated at 2018-09-28 14:11:33.576803. 
+ Fields was: id — 34, title — Harry Potter and the Goblet of Fire, author — J.Rowling, ISBN — ШЫТВ, price — 1234.00, publish date — 2018-09-28
+Fields become: id — 34, title — Harry Potter and the Goblet of Fire, author — I.Asimov, ISBN — ШЫТВ, price — 1234.00, publish date — 2018-09-28
+Book was updated at 2018-09-28 14:11:43.421119. 
+ Fields was: id — 34, title — Harry Potter and the Goblet of Fire, author — I.Asimov, ISBN — ШЫТВ, price — 1234.00, publish date — 2018-09-28
+Fields become: id — 34, title — Harry Potter and the Goblet of Fire, author — S.King, ISBN — ШЫТВ, price — 1234.00, publish date — 2018-09-28
+Book was updated at 2018-09-28 14:11:55.749083. 
+ Fields was: id — 34, title — Harry Potter and the Goblet of Fire, author — S.King, ISBN — ШЫТВ, price — 1234.00, publish date — 2018-09-28
+Fields become: id — 34, title — Harry Potter and the Goblet of Fire, author — S.Erikson, ISBN — ШЫТВ, price — 1234.00, publish date — 2018-09-28
+

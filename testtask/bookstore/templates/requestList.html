@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block bookList %}
+        <h2 style="text-align:center"> Here is list of ten latest requests</h2>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Time</th>
+            <th scope="col">Path</th>
+            <th scope="col">Method</th>
+            <th scope="col">User</th>
+            <th scope="col">Post data</th>
+            <th scope="col">Status Code</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for req in list %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{req.time}}</td>
+                <td>{{req.path}}</td>
+                <td>{{req.method}}</td>
+                <td>{{req.user}}</td>
+                <td>{{req.post}}</td>
+                <td>{{req.status_code}}</td>
+              </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+{% endblock %}

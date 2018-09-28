@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block InfoBlock %}
+{% load checkGroup %}
+    <h2 style="text-align:center"> The information about "{{book.title}}"</h2>
+    <div style="width: 30%; position: relative; left: 35%;">
+    <ul class="list-group">
+            {% url 'bookstore-authorinfo' book.author.id as the_url %}
+            <li class="list-group-item">Author: <a href='{{ the_url }}'>{{book.author }}</a></li>
+            <li class="list-group-item">Publish date: {{ book.publish_date}}</li>
+            <li class="list-group-item">Price:  {{ book.price}}</li>
+            <li class="list-group-item">ISBN:  {{ book.ISBN}}</li>
+    </ul>
+    </div>
+    {% if request.user|has_group:"Manager" or request.user.is_superuser %}
+    {% url 'bookstore-editBook' book.id as the_url %}
+    <button style="position: relative; left:40%; width: 5%; margin-top: 10px"  class="btn btn-primary" onClick='location.href="{{the_url}}"'>Edit</button>
+    {% endif %}
+    {% url 'bookstore-main' as the_url %}
+    <button style="position: relative; left:47%; width: 5%; margin-top: 10px"  class="btn btn-primary" onClick='location.href="{{the_url}}"'>Back</button>
+{% endblock %}
