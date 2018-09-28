@@ -10,3 +10,5 @@ There are three users:
 Only kirill can enter tha admin site.
 
 Password for all users — 1234rewqasdf
+
+DB — sqlite3
