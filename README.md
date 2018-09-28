@@ -1,0 +1,1 @@
+# djangostars_testtask
