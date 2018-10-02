@@ -36,4 +36,3 @@ class Requests(models.Model):
     method = models.CharField(max_length=50)
     user = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
     post = models.TextField(blank=True, null=True)
-    status_code = models.CharField(max_length=50)

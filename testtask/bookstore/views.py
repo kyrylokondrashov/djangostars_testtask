@@ -7,30 +7,6 @@ from django.urls import reverse_lazy
 from bookstore.models import Book,Author,Requests
 from django.contrib.auth.decorators import *
 from django.utils.decorators import method_decorator
-from django.contrib.auth.models import User
-import json
-from django.contrib.sessions.models import Session
-
-
-def dumps(value):
-    return json.dumps(value, default=lambda o: None)
-
-
-def saveRequest(request,response):
-        try:
-            user = User.objects.get(username=request.user)
-        except:
-            user=None
-        uri = request.build_absolute_uri()
-        if request.POST and uri != '/login/':
-            post = dumps(request.POST)
-        Requests(
-            path=request.path,
-            method=request.method,
-            user=user,
-            post= None if not request.POST else dumps(request.POST),
-            status_code=response.status_code
-        ).save()
 
 
 # Create your views here.
@@ -55,20 +31,13 @@ class BookList(ListView):
         return render(request, self.template_name, {'object_list': queryset, 'title':self.title})
 
     def dispatch(self, request, *args, **kwargs):
-        resp = super().dispatch(request, *args, **kwargs)
-        saveRequest(request,resp)
-        return resp
+        return super().dispatch(request, *args, **kwargs)
 
 
 class BookDetails(DetailView):
     model = Book
     template_name = 'bookInfo.html'
     context_object_name = 'book'
-
-    def dispatch(self, request, *args, **kwargs):
-        resp = super().dispatch(request, *args, **kwargs)
-        saveRequest(request, resp)
-        return resp
 
 
 class BookForm(forms.ModelForm):
@@ -90,13 +59,10 @@ class AddBook(CreateView):
     success_url = reverse_lazy('bookstore-main')
     form_class = BookForm
 
-
     @method_decorator(login_required)
     @method_decorator(permission_required('bookstore.change_book', raise_exception=True))
     def dispatch(self, request, *args, **kwargs):
-        resp = super().dispatch(request, *args, **kwargs)
-        saveRequest(request, resp)
-        return resp
+        return super().dispatch(request, *args, **kwargs)
 
 
 class EditBook(UpdateView):
@@ -107,9 +73,7 @@ class EditBook(UpdateView):
     @method_decorator(login_required)
     @method_decorator(permission_required('bookstore.change_book', raise_exception=True))
     def dispatch(self, request, *args, **kwargs):
-        resp = super().dispatch(request, *args, **kwargs)
-        saveRequest(request, resp)
-        return resp
+        return super().dispatch(request, *args, **kwargs)
 
     def get_success_url(self):
         return reverse_lazy('bookstore-bookinfo', kwargs={'pk': self.kwargs['pk']})
@@ -119,11 +83,6 @@ class AuthorDetails(DetailView):
     model = Author
     template_name = 'authorInfo.html'
     context_object_name = 'author'
-
-    def dispatch(self, request, *args, **kwargs):
-        resp = super().dispatch(request, *args, **kwargs)
-        saveRequest(request, resp)
-        return resp
 
 
 class AuthorForm(forms.ModelForm):
@@ -145,9 +104,7 @@ class AddAuthor(CreateView):
     @method_decorator(login_required)
     @method_decorator(permission_required('bookstore.add_author', raise_exception=True))
     def dispatch(self, request, *args, **kwargs):
-        resp = super().dispatch(request, *args, **kwargs)
-        saveRequest(request, resp)
-        return resp
+        return super().dispatch(request, *args, **kwargs)
 
 
 class EditAuthor(UpdateView):
@@ -158,9 +115,7 @@ class EditAuthor(UpdateView):
     @method_decorator(login_required)
     @method_decorator(permission_required('bookstore.add_author', raise_exception=True))
     def dispatch(self, request, *args, **kwargs):
-        resp = super().dispatch(request, *args, **kwargs)
-        saveRequest(request, resp)
-        return resp
+        return super().dispatch(request, *args, **kwargs)
 
     def get_success_url(self):
         return reverse_lazy('bookstore-authorinfo', kwargs={'pk': self.kwargs['pk']})
